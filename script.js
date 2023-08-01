@@ -19,10 +19,12 @@ function displayData(dataset) {
     card.style.backgroundImage = "url(" + image + ")";
     card.addEventListener("click", () => {
       cards.forEach((e) => {
+
         if (!e.classList.contains("active")) {
           e.classList.remove("active");
         }
       });
+
       if (card.classList.contains("active")) {
         card.classList.remove("active");
       } else {
@@ -82,6 +84,12 @@ for (let i = 0; i < navLinks.length; i++) {
 
       default:
         break;
+    }
+    if (link.className != "active") {
+      navLinks.forEach((e) => {
+        e.classList.remove("active");
+      });
+      link.classList.add("active");
     }
   });
 }

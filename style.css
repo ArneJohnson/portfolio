@@ -47,7 +47,7 @@ header {
   text-align: center;
 }
 nav a {
-  margin: 0px 100px 0px 100px;
+  margin: 0px 15vw;
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease-in-out;
@@ -55,7 +55,6 @@ nav a {
   font-size: 12pt;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.5px;
-  padding: 0 15px;
 }
 nav a:before {
   content: "";
@@ -69,9 +68,10 @@ nav a:before {
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
-nav a:hover:before {
+nav a:hover:before,
+nav a.active:before {
   visibility: visible;
-  transform: scaleX(0.7);
+  transform: scaleX(1);
 }
 
 /* Sidebar */
@@ -126,8 +126,8 @@ nav a:hover:before {
 .project {
   width: 50%;
   height: auto;
-  aspect-ratio: 16/9;
   background-size: cover;
+  aspect-ratio: 16/9;
   transition: opacity 0.3s;
 }
 .project-info {
@@ -159,7 +159,7 @@ nav a:hover:before {
   padding-bottom: 2%;
 }
 .project-info a {
-  font-size: min(1.5vw, 16px);
+  font-size: min(1.5vw, 20px);
   text-decoration: none;
   background-color: none;
   border: solid 2px white;
