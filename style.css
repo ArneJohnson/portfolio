@@ -170,18 +170,15 @@ nav a:hover:before {
   transition: all 0.5s;
 }
 
-.project-info a:hover,
-.project-info a:active {
+.project-info a:hover {
   color: rgb(220, 220, 220);
   border-color: rgb(220, 220, 220);
   cursor: pointer;
 }
-.project:hover,
-.project:active {
+.project:hover {
   opacity: 0.9;
 }
-.project:hover .project-info,
-.project:active .project-info {
+.project:hover .project-info {
   opacity: 1;
   backdrop-filter: blur(20px);
 }
