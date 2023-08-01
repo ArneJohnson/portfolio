@@ -210,9 +210,12 @@ nav a:hover:before {
     font-size: 16px;
   }
 
-  .project.active {
+  .project.active * {
     transition: all 0.5s;
     opacity: 0.9;
+  }
+  .project-info {
+    opacity: 0;
   }
   .project.active .project-info {
     transition: all 0.5s;
