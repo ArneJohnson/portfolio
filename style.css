@@ -202,13 +202,11 @@ nav a.active:before {
   }
 
   .project-info h1 {
-    font-size: 6.5vw;
+    font-size: 130%;
   }
-  .project-info p {
-    font-size: 4vw;
-  }
+  .project-info p,
   .project-info a {
-    font-size: 3.8vw;
+    font-size: 70%;
   }
 
   .project.active {
