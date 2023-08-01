@@ -3,6 +3,7 @@ const projects = document.getElementById("works");
 
 // Project data
 function displayData(dataset) {
+  let cards = [];
   projects.innerHTML = "";
 
   for (let i = 0; i < dataset.length; i++) {
@@ -16,6 +17,18 @@ function displayData(dataset) {
     const card = document.createElement("div");
     card.classList.add("project");
     card.style.backgroundImage = "url(" + image + ")";
+    card.addEventListener("click", () => {
+      cards.forEach((e) => {
+        if (!e.classList.contains("active")) {
+          e.classList.remove("active");
+        }
+      });
+      if (card.classList.contains("active")) {
+        card.classList.remove("active");
+      } else {
+        card.classList.add("active");
+      }
+    });
 
     const info = document.createElement("div");
     info.classList.add("project-info");
@@ -35,6 +48,8 @@ function displayData(dataset) {
 
     card.appendChild(info);
     projects.appendChild(card);
+
+    cards.push(card);
   }
 }
 

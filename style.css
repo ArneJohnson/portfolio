@@ -144,6 +144,7 @@ nav a:hover:before {
   color: white;
   text-shadow: #1b1b1b 1px 0 10px;
   font-family: "Nunito Sans", sans-serif;
+  user-select: none;
 }
 .project-info *:hover {
   cursor: default;
@@ -169,7 +170,8 @@ nav a:hover:before {
   transition: all 0.5s;
 }
 
-.project-info a:hover {
+.project-info a:hover,
+.project-info a:active {
   color: rgb(220, 220, 220);
   border-color: rgb(220, 220, 220);
   cursor: pointer;
@@ -206,5 +208,13 @@ nav a:hover:before {
   }
   .project-info a {
     font-size: 16px;
+  }
+
+  .project.active {
+    opacity: 0.9;
+  }
+  .project.active .project-info {
+    opacity: 1;
+    backdrop-filter: blur(20px);
   }
 }
