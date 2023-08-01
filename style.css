@@ -171,17 +171,20 @@ nav a:hover:before {
   transition: all 0.5s;
 }
 
-.project-info a:hover {
-  color: rgb(220, 220, 220);
-  border-color: rgb(220, 220, 220);
-  cursor: pointer;
-}
-.project:hover {
-  opacity: 0.9;
-}
-.project:hover .project-info {
-  opacity: 1;
-  backdrop-filter: blur(20px);
+@media only screen and (min-width: 660px) {
+  /* For PC */
+  .project-info a:hover {
+    color: rgb(220, 220, 220);
+    border-color: rgb(220, 220, 220);
+    cursor: pointer;
+  }
+  .project:hover {
+    opacity: 0.9;
+  }
+  .project:hover .project-info {
+    opacity: 1;
+    backdrop-filter: blur(20px);
+  }
 }
 
 @media only screen and (max-width: 660px) {
