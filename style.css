@@ -211,11 +211,13 @@ nav a:hover:before {
   }
 
   .project.active {
+    transition: all 0.5s;
     opacity: 0.9;
   }
   .project.active .project-info {
-    opacity: 1;
+    transition: all 0.5s;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+    opacity: 1;
   }
 }
