@@ -151,11 +151,11 @@ nav a.active:before {
   cursor: default;
 }
 .project-info h1 {
-  font-size: min(3vw, 32px);
+  font-size: min(2.5vw, 32px);
   padding-top: 5%;
 }
 .project-info p {
-  font-size: min(2vw, 22px);
+  font-size: min(1.5vw, 22px);
   padding-bottom: 2%;
 }
 .project-info a {
@@ -206,7 +206,7 @@ nav a.active:before {
   }
   .project-info p,
   .project-info a {
-    font-size: 70%;
+    font-size: 80%;
   }
 
   .project.active {
