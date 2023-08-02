@@ -12,7 +12,7 @@ body {
 /* Intro animation div */
 .intro-animation {
   position: fixed;
-  border: solid rgb(17, 17, 17);
+  border: solid rgb(13, 13, 13);
   border-width: 100vh 100vw;
   margin: auto;
   z-index: 1000;
