@@ -45,6 +45,7 @@ function displayData(dataset) {
 
     const link = document.createElement("a");
     link.href = adress;
+    link.target = "_blank";
     link.innerText = linktext;
     info.appendChild(link);
 
