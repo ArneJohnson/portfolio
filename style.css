@@ -6,7 +6,7 @@ body {
   background: rgb(34, 34, 34);
   min-height: 100vh;
   min-width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* Intro animation div */
@@ -45,6 +45,7 @@ header {
   padding: 20px;
   min-height: 2vh;
   text-align: center;
+  background-color: #202020;
 }
 nav a {
   margin: 0px 15vw;
@@ -75,13 +76,6 @@ nav a.active:before {
 }
 
 /* Sidebar */
-#pc-project-sidebar {
-  width: 15vw;
-  height: 100vh;
-  margin: 0px;
-  padding: 50px;
-  float: left;
-}
 .sidebar-header {
   padding: 50px 20px 50px 20px;
   justify-content: center;
@@ -92,27 +86,6 @@ nav a.active:before {
   font-family: "Nunito Sans", sans-serif;
   text-decoration: none;
   position: fixed;
-}
-.sidebar-header a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: rgb(255, 255, 255);
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
-}
-.sidebar-header a:hover:before,
-.sidebar-header a:focus:before,
-.sidebar-header a.active:before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-#pc-project-sidebar .sidebar-header:hover a {
-  color: rgb(200, 200, 200);
 }
 
 /* Works page */
@@ -185,6 +158,35 @@ nav a.active:before {
     opacity: 1;
     backdrop-filter: blur(20px);
   }
+
+  #project-sidebar {
+    width: 15vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 50px;
+    float: left;
+  }
+  #project-sidebar .sidebar-header:hover a {
+    color: rgb(200, 200, 200);
+  }
+  .sidebar-header a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  .sidebar-header a:hover:before,
+  .sidebar-header a:focus:before,
+  .sidebar-header a.active:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 }
 
 @media only screen and (max-width: 660px) {
@@ -193,14 +195,36 @@ nav a.active:before {
     min-width: 100vw;
   }
 
+  header {
+    position: fixed;
+    width: 100vw;
+  }
+
+  #project-sidebar {
+    width: 100vw;
+    height: 8vh;
+    margin: 0px;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 5;
+    background: rgb(34, 34, 34);
+  }
+  #project-sidebar .sidebar-header {
+    width: 25vw;
+    padding: 0px;
+    margin: auto;
+  }
+  #project-sidebar .sidebar-header a {
+    font-size: 16px;
+    width: inherit;
+    text-align: center;
+  }
+
   .project {
     width: 100%;
   }
-
-  #pc-project-sidebar {
-    display: none;
-  }
-
   .project-info h1 {
     font-size: 130%;
   }
@@ -208,7 +232,6 @@ nav a.active:before {
   .project-info a {
     font-size: 80%;
   }
-
   .project.active {
     transition: all 0.5s;
     opacity: 0.9;
