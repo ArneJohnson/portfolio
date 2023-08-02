@@ -196,7 +196,6 @@ nav a.active:before {
   }
 
   header {
-    position: fixed;
     width: 100vw;
   }
 
