@@ -278,6 +278,6 @@ nav a.active:before {
     padding: 0px;
     height: 10vh;
     float: left;
-    background: none;
+    background-color: rgb(34, 34, 34);
   }
 }
