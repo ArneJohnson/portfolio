@@ -16,27 +16,6 @@ body {
   border-width: 100vh 100vw;
   margin: auto;
   z-index: 1000;
-  animation: intro-animation 2.5s 0.2s ease-in-out forwards;
-}
-@keyframes intro-animation {
-  0% {
-    top: 0vh;
-    left: -55vw;
-    width: 10vw;
-    height: 10vh;
-  }
-  50% {
-    top: -55vh;
-    left: -55vw;
-    width: 10vw;
-    height: 10vh;
-  }
-  100% {
-    top: -100vh;
-    left: -100vw;
-    width: 100vw;
-    height: 100vh;
-  }
 }
 
 /* Header */
@@ -279,5 +258,49 @@ nav a.active:before {
     height: 10vh;
     float: left;
     background-color: rgb(34, 34, 34);
+  }
+}
+
+/* Animations */
+@keyframes intro-animation {
+  0% {
+    top: 0vh;
+    left: -55vw;
+    width: 10vw;
+    height: 10vh;
+  }
+  50% {
+    top: -55vh;
+    left: -55vw;
+    width: 10vw;
+    height: 10vh;
+  }
+  100% {
+    top: -100vh;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    filter: blur(0px);
+    opacity: 100%;
+  }
+  100% {
+    filter: blur(5px);
+    opacity: 0%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    filter: blur(5px);
+    opacity: 0%;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 100%;
   }
 }

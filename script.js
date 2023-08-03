@@ -1,9 +1,10 @@
 // Projects variables
 const projects = document.getElementById("works");
+let cards = [];
 
 // Project data
 function displayData(dataset) {
-  let cards = [];
+  cards = [];
   projects.innerHTML = "";
 
   for (let i = 0; i < dataset.length; i++) {
@@ -18,6 +19,7 @@ function displayData(dataset) {
     const card = document.createElement("div");
     card.classList.add("project");
     card.classList.add(mode);
+    card.style.animation = "fade-in 0.3s forwards";
     card.style.backgroundImage = "url(" + image + ")";
     card.addEventListener("click", () => {
       cards.forEach((e) => {
@@ -65,6 +67,10 @@ function displayData(dataset) {
 // Intro element
 const introElement = document.getElementById("intro");
 introElement.addEventListener("animationend", introElement.remove);
+function load() {
+  introElement.style.animation = "intro-animation 2.5s 0.2s ease-in-out forwards";
+}
+window.onload = load();
 
 // Navigation variables
 const worksPage = document.getElementById("projects-page");
@@ -124,7 +130,12 @@ for (let i = 0; i < sidebarHeaders.length; i++) {
         e.classList.remove("active");
       });
       sidebarHeaders[i].classList.add("active");
-      addProjects();
+
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].style.animation = "fade-out 0.3s forwards"
+      }
+
+      setTimeout(addProjects, 300);
     }
   });
 }
