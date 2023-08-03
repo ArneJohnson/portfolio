@@ -217,11 +217,12 @@ nav a.active:before {
   }
   #project-sidebar {
     width: 100vw;
-    height: 8vh;
+    height: 16vh;
     margin: 0px;
     position: fixed;
     bottom: 0px;
     padding-bottom: 20px;
+    margin-bottom: -8vh;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -229,7 +230,7 @@ nav a.active:before {
   }
   #project-sidebar .sidebar-header {
     padding: 0px;
-    margin: auto;
+    margin-top: 4vh;
   }
   #project-sidebar .sidebar-header a {
     position: relative;
@@ -277,5 +278,6 @@ nav a.active:before {
     padding: 0px;
     height: 10vh;
     float: left;
+    background: none;
   }
 }
