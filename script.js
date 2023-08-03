@@ -13,9 +13,11 @@ function displayData(dataset) {
     const text = data[2];
     const linktext = data[3];
     const adress = data[4];
+    const mode = data[5];
 
     const card = document.createElement("div");
     card.classList.add("project");
+    card.classList.add(mode);
     card.style.backgroundImage = "url(" + image + ")";
     card.addEventListener("click", () => {
       cards.forEach((e) => {
@@ -54,6 +56,10 @@ function displayData(dataset) {
 
     cards.push(card);
   }
+
+  const whitespace = document.createElement('div');
+  whitespace.classList.add("whitespace");
+  projects.appendChild(whitespace);
 }
 
 // Intro element
