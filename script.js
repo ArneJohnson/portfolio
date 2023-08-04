@@ -19,7 +19,7 @@ function displayData(dataset) {
     const card = document.createElement("div");
     card.classList.add("project");
     card.classList.add(mode);
-    card.style.animation = "fade-in 0.3s forwards";
+    card.style.animation = "move-up 0.3s " + i / 10 + "s ease-in-out backwards";
     card.style.backgroundImage = "url(" + image + ")";
     card.addEventListener("click", () => {
       cards.forEach((e) => {
@@ -86,7 +86,7 @@ for (let i = 0; i < navLinks.length; i++) {
   link.addEventListener("click", () => {
     switch (link.innerText) {
       case "Work":
-        worksPage.style.display = "block";
+        worksPage.style.display = "flex";
         aboutPage.style.display = "none";
         break;
 
@@ -132,10 +132,10 @@ for (let i = 0; i < sidebarHeaders.length; i++) {
       sidebarHeaders[i].classList.add("active");
 
       for (let i = 0; i < cards.length; i++) {
-        cards[i].style.animation = "fade-out 0.3s forwards"
+        cards[cards.length - i - 1].style.animation = "move-down 0.3s " + i / 10 + "s ease-in-out forwards";
       }
 
-      setTimeout(addProjects, 300);
+      cards[0].addEventListener("animationend", addProjects);
     }
   });
 }

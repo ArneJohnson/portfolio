@@ -261,6 +261,26 @@ nav a.active:before {
   }
 }
 
+/* About page */
+#about-page {
+  width: 70vw;
+  margin: auto;
+}
+#about-page * {
+  color: white;
+  text-shadow: #666666 1px 0 15px;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 10px;
+  margin: 0px;
+}
+#about-page h1 {
+  margin-top: 50px;
+  font-size: 32px;
+}
+#about-page p {
+  font-size: 20px;
+}
+
 /* Animations */
 @keyframes intro-animation {
   0% {
@@ -283,24 +303,20 @@ nav a.active:before {
   }
 }
 
-@keyframes fade-out {
+@keyframes move-down {
   0% {
-    filter: blur(0px);
-    opacity: 100%;
+    transform: translateY(0px);
   }
   100% {
-    filter: blur(5px);
-    opacity: 0%;
+    transform: translateY(100vh);
   }
 }
 
-@keyframes fade-in {
+@keyframes move-up {
   0% {
-    filter: blur(5px);
-    opacity: 0%;
+    transform: translateY(100vh);
   }
   100% {
-    filter: blur(0px);
-    opacity: 100%;
+    transform: translateY(0px);
   }
 }
