@@ -69,3 +69,5 @@ const magazinesdata =
       "double"
     ]
   ];
+
+const alldata = [artdata, gamesdata, websitesdata, magazinesdata];

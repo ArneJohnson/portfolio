@@ -1,62 +1,26 @@
+// Window onload, Preload images and animate intro element
+window.onload = () => {
+  for (let i = 0; i < alldata.length; i++) {
+    for (let j = 0; j < alldata[i].length; j++) {
+      createCard(alldata[i][j]);
+    }
+  }
+
+  addProjects();
+  loadIntro();
+};
+
 // Projects variables
 const projects = document.getElementById("works");
 let cards = [];
 
-// Project data
+// Reset project screen, add cards then add whitespace at bottom of screen
 function displayData(dataset) {
   cards = [];
   projects.innerHTML = "";
 
   for (let i = 0; i < dataset.length; i++) {
-    let data = dataset[i];
-    const image = data[0];
-    const title = data[1];
-    const text = data[2];
-    const linktext = data[3];
-    const adress = data[4];
-    const mode = data[5];
-
-    const card = document.createElement("div");
-    card.classList.add("project");
-    card.classList.add(mode);
-    card.style.animation = "move-up 0.3s " + i / 10 + "s ease-in-out backwards";
-    card.style.backgroundImage = "url(" + image + ")";
-    card.addEventListener("click", () => {
-      cards.forEach((e) => {
-
-        if (!e.classList.contains("active")) {
-          e.classList.remove("active");
-        }
-      });
-
-      if (card.classList.contains("active")) {
-        card.classList.remove("active");
-      } else {
-        card.classList.add("active");
-      }
-    });
-
-    const info = document.createElement("div");
-    info.classList.add("project-info");
-
-    const header = document.createElement("h1");
-    header.innerText = title;
-    info.appendChild(header);
-
-    const paragraph = document.createElement("p");
-    paragraph.innerText = text;
-    info.appendChild(paragraph);
-
-    const link = document.createElement("a");
-    link.href = adress;
-    link.target = "_blank";
-    link.innerText = linktext;
-    info.appendChild(link);
-
-    card.appendChild(info);
-    projects.appendChild(card);
-
-    cards.push(card);
+    createCard(dataset[i]);
   }
 
   const whitespace = document.createElement('div');
@@ -64,13 +28,64 @@ function displayData(dataset) {
   projects.appendChild(whitespace);
 }
 
+// Create card from data
+function createCard(data) {
+  const image = data[0];
+  const title = data[1];
+  const text = data[2];
+  const linktext = data[3];
+  const adress = data[4];
+  const mode = data[5];
+
+  const card = document.createElement("div");
+  card.classList.add("project");
+  card.classList.add(mode);
+  card.style.animation = "move-up 0.3s " + cards.length / 10 + "s ease-in-out backwards";
+  card.style.backgroundImage = "url(" + image + ")";
+  card.addEventListener("click", () => {
+    cards.forEach((e) => {
+
+      if (!e.classList.contains("active")) {
+        e.classList.remove("active");
+      }
+    });
+
+    if (card.classList.contains("active")) {
+      card.classList.remove("active");
+    } else {
+      card.classList.add("active");
+    }
+  });
+
+  const info = document.createElement("div");
+  info.classList.add("project-info");
+
+  const header = document.createElement("h1");
+  header.innerText = title;
+  info.appendChild(header);
+
+  const paragraph = document.createElement("p");
+  paragraph.innerText = text;
+  info.appendChild(paragraph);
+
+  const link = document.createElement("a");
+  link.href = adress;
+  link.target = "_blank";
+  link.innerText = linktext;
+  info.appendChild(link);
+
+  card.appendChild(info);
+  projects.appendChild(card);
+
+  cards.push(card);
+}
+
 // Intro element
 const introElement = document.getElementById("intro");
 introElement.addEventListener("animationend", introElement.remove);
-function load() {
+function loadIntro() {
   introElement.style.animation = "intro-animation 2.5s 0.2s ease-in-out forwards";
 }
-window.onload = load();
 
 // Navigation variables
 const worksPage = document.getElementById("projects-page");
@@ -107,7 +122,7 @@ for (let i = 0; i < navLinks.length; i++) {
   });
 }
 
-// Projects
+// Check active project header and add cards
 function addProjects() {
   for (let i = 0; i < sidebarHeaders.length; i++) {
     if (sidebarHeaders[i].className == "active") {
@@ -120,7 +135,6 @@ function addProjects() {
     }
   }
 }
-addProjects();
 
 // Sidebar category selector
 for (let i = 0; i < sidebarHeaders.length; i++) {
